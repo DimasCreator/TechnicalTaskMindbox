@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ShapeLibrary
+namespace TechnicalTaskMindbox.ShapeLibrary
 {
     public class Class1
     {
