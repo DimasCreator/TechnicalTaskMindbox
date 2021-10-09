@@ -8,11 +8,19 @@ namespace TechnicalTaskMindbox.ShapeLibrary.Shapes
         public double SecondSide { get; private set; }
         public double ThirdSide { get; private set; }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <exception cref="Exception">If one side of a triangle is larger than the other two, an exception is thrown</exception>
         public Triangle(double firstSide, double secondSide, double thirdSide)
         {
             SetSides(firstSide, secondSide, thirdSide);
         }
 
+        /// <summary>
+        /// Set triangle sides
+        /// </summary>
+        /// <exception cref="Exception">If one side of a triangle is larger than the other two, an exception is thrown</exception>
         public void SetSides(double firstSide, double secondSide, double thirdSide)
         {
             FirstSide = firstSide;
@@ -43,7 +51,10 @@ namespace TechnicalTaskMindbox.ShapeLibrary.Shapes
 
             return true;
         }
-
+        /// <summary>
+        /// Triangle area
+        /// </summary>
+        /// <returns>Area</returns>
         public double Area()
         {
             double semiPerimeter = (FirstSide + SecondSide + ThirdSide) / 2;
@@ -51,6 +62,10 @@ namespace TechnicalTaskMindbox.ShapeLibrary.Shapes
                              (semiPerimeter - ThirdSide));
         }
 
+        /// <summary>
+        /// Is a triangle right-angled
+        /// </summary>
+        /// <returns>True if right triangle</returns>
         public bool IsRight()
         {
             if (Math.Pow(FirstSide, 2) == Math.Pow(SecondSide, 2) + Math.Pow(ThirdSide, 2))
