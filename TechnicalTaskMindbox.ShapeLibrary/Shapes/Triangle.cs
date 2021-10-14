@@ -2,6 +2,9 @@
 
 namespace TechnicalTaskMindbox.ShapeLibrary.Shapes
 {
+    /// <summary>
+    /// Triangle
+    /// </summary>
     public class Triangle : IShape
     {
         public double FirstSide { get; private set; }
@@ -10,7 +13,7 @@ namespace TechnicalTaskMindbox.ShapeLibrary.Shapes
 
         /// <summary>
         /// Constructor 
-        /// If passed values ​​less than zero sets the values ​​to zero
+        /// If the passed values ​​are less than zero, absolute values ​​are set
         /// </summary>
         public Triangle(double firstSide, double secondSide, double thirdSide)
         {
@@ -19,22 +22,13 @@ namespace TechnicalTaskMindbox.ShapeLibrary.Shapes
 
         /// <summary>
         /// Set triangle sides
-        /// If passed values ​​less than zero sets the values ​​to zero
+        /// If the passed values ​​are less than zero, absolute values ​​are set
         /// </summary>
         public void SetSides(double firstSide, double secondSide, double thirdSide)
         {
-            FirstSide = ToNonNegative(firstSide);
-            SecondSide = ToNonNegative(secondSide);
-            ThirdSide = ToNonNegative(thirdSide);
-        }
-
-        private double ToNonNegative(double value)
-        {
-            if (value < 0)
-            {
-                return 0;
-            }
-            return value;
+            FirstSide = Math.Abs(firstSide);
+            SecondSide = Math.Abs(secondSide);
+            ThirdSide = Math.Abs(thirdSide);
         }
 
         /// <summary>
@@ -57,7 +51,10 @@ namespace TechnicalTaskMindbox.ShapeLibrary.Shapes
             {
                 return false;
             }
-
+            if(FirstSide * SecondSide * ThirdSide == 0)
+            {
+                return false;
+            }
             return true;
         }
 
@@ -76,7 +73,7 @@ namespace TechnicalTaskMindbox.ShapeLibrary.Shapes
         /// Is a triangle right-angled
         /// </summary>
         /// <returns>True if right triangle</returns>
-        public bool IsRight()
+        public bool IsOrthogonal()
         {
             if (Math.Pow(FirstSide, 2) == Math.Pow(SecondSide, 2) + Math.Pow(ThirdSide, 2))
             {

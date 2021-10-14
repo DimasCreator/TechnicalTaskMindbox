@@ -1,21 +1,24 @@
-using System;
+﻿using System;
 
 namespace TechnicalTaskMindbox.ShapeLibrary.Shapes
 {
+    /// <summary>
+    /// Circle
+    /// </summary>
     public class Circle : IShape
     {
         private double _radius;
-        
+
+        /// <summary>
+        /// Circle radius
+        /// set: If the passed values ​​are less than zero, absolute values ​​are set
+        /// </summary>
         public double Radius
         {
             get => _radius;
             set
             {
-                if (value < 0)
-                {
-                    value = 0;
-                }
-                _radius = value;
+                _radius = Math.Abs(value);
             }
         }
 
