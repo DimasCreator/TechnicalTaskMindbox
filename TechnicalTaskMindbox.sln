@@ -1,8 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechnicalTaskMindbox.ShapeLibrary", "TechnicalTaskMindbox.ShapeLibrary\TechnicalTaskMindbox.ShapeLibrary.csproj", "{7C132A43-C094-4ACF-A9AF-4BDD635941FE}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechnicalTaskMindbox.ShapeLibrary", "TechnicalTaskMindbox.ShapeLibrary\TechnicalTaskMindbox.ShapeLibrary.csproj", "{7C132A43-C094-4ACF-A9AF-4BDD635941FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechnicalTaskMindbox.Program.Cmd", "TechnicalTaskMindbox.Program.Cmd\TechnicalTaskMindbox.Program.Cmd.csproj", "{81E15B2A-7101-43DE-BE43-18A38A2BE802}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechnicalTaskMindbox.Program.Cmd", "TechnicalTaskMindbox.Program.Cmd\TechnicalTaskMindbox.Program.Cmd.csproj", "{81E15B2A-7101-43DE-BE43-18A38A2BE802}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechnicalTaskMindbox.Tests", "TechnicalTaskMindbox.Tests\TechnicalTaskMindbox.Tests.csproj", "{B26EC53A-4A32-4C61-80B6-F313FB887871}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +23,15 @@ Global
 		{81E15B2A-7101-43DE-BE43-18A38A2BE802}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81E15B2A-7101-43DE-BE43-18A38A2BE802}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81E15B2A-7101-43DE-BE43-18A38A2BE802}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B26EC53A-4A32-4C61-80B6-F313FB887871}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B26EC53A-4A32-4C61-80B6-F313FB887871}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B26EC53A-4A32-4C61-80B6-F313FB887871}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B26EC53A-4A32-4C61-80B6-F313FB887871}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45B9CBC9-868F-42A9-8376-2E30B90D6810}
 	EndGlobalSection
 EndGlobal

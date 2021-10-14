@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace TechnicalTaskMindbox.ShapeLibrary.Shapes
 {
@@ -9,9 +9,9 @@ namespace TechnicalTaskMindbox.ShapeLibrary.Shapes
         public double ThirdSide { get; private set; }
 
         /// <summary>
-        /// Constructor
+        /// Constructor 
+        /// If passed values ​​less than zero sets the values ​​to zero
         /// </summary>
-        /// <exception cref="Exception">If one side of a triangle is larger than the other two, an exception is thrown</exception>
         public Triangle(double firstSide, double secondSide, double thirdSide)
         {
             SetSides(firstSide, secondSide, thirdSide);
@@ -19,20 +19,29 @@ namespace TechnicalTaskMindbox.ShapeLibrary.Shapes
 
         /// <summary>
         /// Set triangle sides
+        /// If passed values ​​less than zero sets the values ​​to zero
         /// </summary>
-        /// <exception cref="Exception">If one side of a triangle is larger than the other two, an exception is thrown</exception>
         public void SetSides(double firstSide, double secondSide, double thirdSide)
         {
-            FirstSide = firstSide;
-            SecondSide = secondSide;
-            ThirdSide = thirdSide;
-            if (!Validation())
-            {
-                throw new Exception("There can be no such triangle");
-            }
+            FirstSide = ToNonNegative(firstSide);
+            SecondSide = ToNonNegative(secondSide);
+            ThirdSide = ToNonNegative(thirdSide);
         }
 
-        private bool Validation()
+        private double ToNonNegative(double value)
+        {
+            if (value < 0)
+            {
+                return 0;
+            }
+            return value;
+        }
+
+        /// <summary>
+        /// Checks if a triangle can exist based on its sides
+        /// </summary>
+        /// <returns>True if possible</returns>
+        public bool IsReal()
         {
             if (FirstSide + SecondSide < ThirdSide)
             {
@@ -51,6 +60,7 @@ namespace TechnicalTaskMindbox.ShapeLibrary.Shapes
 
             return true;
         }
+
         /// <summary>
         /// Triangle area
         /// </summary>

@@ -13,7 +13,7 @@ namespace TechnicalTaskMindbox.ShapeLibrary.Shapes
             {
                 if (value < 0)
                 {
-                    throw new Exception("Radius cannot be less than zero");
+                    value = 0;
                 }
                 _radius = value;
             }
@@ -22,7 +22,6 @@ namespace TechnicalTaskMindbox.ShapeLibrary.Shapes
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <exception cref="Exception">If the radius is less than zero, an exception is thrown</exception>
         public Circle(double radius)
         {
             Radius = radius;
